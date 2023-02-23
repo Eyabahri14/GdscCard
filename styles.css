@@ -46,17 +46,18 @@ body {
 
 .card > div {
     border-radius: 15px;
-    box-shadow: 0 10px 10px rgba(90, 116, 148, 0.3);
+    box-shadow: 0 10px 10px rgb(90 116 148 / 30%);
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 315px;
-    padding: 30px;
+    min-height: 343px;
+    padding: 29px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
 }
 
 /* Parte delantera tarjeta */
 .card .front-card {
-    background: url("./CARTE.png");
+    background: url("./CARTEe.png");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -91,7 +92,7 @@ body {
 .card .front-card .info-card-front .group-expiration-card,
 .expiration-card {
     color: #ffffff;
-    font-size: 22px;
+    font-size: 25px;
     text-transform: uppercase;
 }
 
@@ -104,7 +105,7 @@ body {
 /* Parte trasera tarjeta */
 .card .back-card {
     backface-visibility: hidden;
-    background: url("https://firebasestorage.googleapis.com/v0/b/fire-fotos-8e3f9.appspot.com/o/img%2Fbg-tarjeta-03.jpg?alt=media&token=73e17b4c-192d-449b-9be7-f9f045b57880")
+    background: url("546________.png")
     #1c1c1c 0 0 / cover no-repeat scroll;
     position: absolute;
     top: 0;
@@ -125,7 +126,7 @@ body {
 .card .back-card .info-card-back {
     display: flex;
     justify-content: space-between;
-    margin-top: 60px;
+    margin-top: 83px;
 }
 
 .card .back-card .info-card-back p {
@@ -143,6 +144,8 @@ body {
             #ffa500 5px,
             #ffa500 10px
     );
+    height: 47px;
+    width: 380px;
     height: 40px;
 }
 
@@ -377,3 +380,40 @@ body {
         margin-bottom: 1rem;
     }
 }
+
+
+#modalBtn {
+
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.modal {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+  overflow: hidden;
+  padding-top: 20%;
+  transition: all 0.3s;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.content {
+    border-radius: 30px;
+    padding: 50px;
+   
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: auto;
+    backdrop-filter: blur(10px);
+  }
+
+.active {
+  display: block;
+  transform: scale(1);
+  opacity: 1;
+}
+
+  

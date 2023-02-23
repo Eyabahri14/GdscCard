@@ -68,20 +68,10 @@ numberCardForm.addEventListener('keyup', e => {
 
     if ( valueNumberCardForm === '' ) {
         numberCard.textContent = '#### #### #### ####';
-        logoCard.innerHTML = '';
+       
     }
 
-    if ( valueNumberCardForm[0] === '4' ) {
-        logoCard.innerHTML = '';
-        let imgLogo = document.createElement('img');
-        imgLogo.src = 'https://firebasestorage.googleapis.com/v0/b/fire-fotos-8e3f9.appspot.com/o/img%2Fvisa.png?alt=media&token=d1324d01-81f6-42d4-a37c-1edc19e1e0b1';
-        logoCard.appendChild(imgLogo);
-    } else if ( valueNumberCardForm[0] === '5' ) {
-        logoCard.innerHTML = '';
-        let imgLogo = document.createElement('img');
-        imgLogo.src = 'https://firebasestorage.googleapis.com/v0/b/fire-fotos-8e3f9.appspot.com/o/img%2Fmastercard.png?alt=media&token=1a5347d2-a282-436f-87a8-f193458830f4';
-        logoCard.appendChild(imgLogo);
-    }
+    
 
     // Voltear la tarjeta para que el usuario vea el frente
     showFrontCard();
@@ -94,7 +84,7 @@ nameCardForm.addEventListener('keyup', e => {
 
     nameCardForm.value = valueNameCardForm;
     nameCard.textContent = valueNameCardForm;
-    firmCard.textContent = valueNameCardForm;
+  
 
     if ( valueNameCardForm === '' ) {
         nameCard.textContent = 'John Doe';
@@ -130,3 +120,49 @@ ccvCardForm.addEventListener('keyup', e => {
 
     ccvCard.textContent = ccvCardForm.value;
 });
+
+const btn = document.getElementById("modalBtn");
+
+const popShow = document.getElementById("thisModal");
+
+const closePop = document.querySelector(".close");
+
+
+
+
+function checkInputs() {
+     {
+      const popShow = document.getElementById('popShow');
+      popShow.classList.add('active');
+    }
+  }
+
+  btn.addEventListener('click', function(){
+    const cardNumberInput = document.getElementById('number-card-form');
+    const nameCardHolderInput = document.getElementById('name-card-form');
+    const monthExpirationInput = document.getElementById('mounth-expiration-card-form');
+    const yearExpirationInput = document.getElementById('year-expiration-card-form');
+    const ccvInput = document.getElementById('ccv-card-form');
+  
+    const cardNumber = "2021 2223 2425 2627";
+    const nameCardHolder = "International Card";
+    const monthExpiration = 2;
+    const yearExpiration = 2025;
+    const ccv = "546";
+
+    console.log((cardNumberInput.value === cardNumber));
+    console.log((nameCardHolderInput.value === nameCardHolder));
+    console.log((Number(monthExpirationInput.value) === monthExpiration));
+    console.log((Number(yearExpirationInput.value) === yearExpiration));
+    console.log((ccvInput.value === ccv));
+
+  
+    if ((cardNumberInput.value === cardNumber) && (nameCardHolderInput.value === nameCardHolder) && (Number(monthExpirationInput.value) === monthExpiration) && (Number(yearExpirationInput.value) === yearExpiration) && (ccvInput.value === ccv)){
+            popShow.classList.add('active');
+        }
+  });
+  
+
+
+  
+
