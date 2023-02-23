@@ -165,4 +165,67 @@ function checkInputs() {
 
 
   
+//--QUIZ
+// Récupérer le formulaire de quiz et ajouter un événement de soumission
+// Function to show toast message
+function showToast(message, type) {
+    var toastContainer = document.getElementById("toast-container");
+    var toast = document.getElementById("toast");
+
+    // Set toast message and type
+    toast.innerHTML = message;
+    toast.className = "toast-" + type;
+
+    // Show toast message
+    toast.style.opacity = 1;
+
+    // Hide toast message after 3 seconds
+    setTimeout(function() {
+        toast.style.opacity = 0;
+    }, 10000);
+}
+
+// Quiz form submit event listener
+document.getElementById("quiz-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Get selected answer value
+    var selectedAnswer = document.querySelector('input[name="quiz"]:checked').value;
+
+    // Check if selected answer is correct
+    if (selectedAnswer === "true") {
+        showToast("Good answer.The hint : To ensure the security of your transaction, your card is protected by a unique code. Remember, your code starts with '20' and ends with '27'. Keep this in mind when filling out the form and unlocking the next step!", "success");
+    } else {
+        showToast("Wrong answer,please try again !", "error");
+    }
+});
+
+document.getElementById("quiz-form2").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Get selected answer value
+    var selectedAnswer = document.querySelector('input[name="quiz2"]:checked').value;
+
+    // Check if selected answer is correct
+    if (selectedAnswer === "true") {
+        showToast("Good answer. The hint : Amen Bank has created this \"International Card\" to enable you to conduct secure transactions ", "success");
+    } else {
+        showToast("Wrong answer,please try again !", "error");
+    }
+});
+
+document.getElementById("quiz-form3").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Get selected answer value
+    var selectedAnswer = document.querySelector('input[name="quiz3"]:checked').value;
+
+    // Check if selected answer is correct
+    if (selectedAnswer === "true") {
+        showToast("Gooad answer.The hint : Don't miss out on the latest payment card from Amen Bank! This card is the most recent addition to their collection,but you only have exactly two years to take advantage of its benefits before it expires in the same month." +
+            " Be sure to use it while you can, and don't wait until it's too late!", "success");
+    } else {
+        showToast("Wrong answer,please try again !", "error");
+    }
+});
 
